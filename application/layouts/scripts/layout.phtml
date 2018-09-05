@@ -1,0 +1,146 @@
+<?php
+$homeUrl = $this->url(array('controller' => 'index', 'action' => 'index'));
+$aboutUrl = $this->url(array('controller' => 'index', 'action' => 'about'));
+$servicesUrl = $this->url(array('controller' => 'index', 'action' => 'services'));
+$contactsUrl = $this->url(array('controller' => 'index', 'action' => 'contacts'));
+$loginUrl = $this->url(array('controller' => 'auth', 'action' => 'login'));
+$accountUrl = $this->url(array('controller' => 'auth', 'action' => 'index'));
+$logoutUrl = $this->url(array('controller' => 'auth', 'action' => 'logout'));
+$makeOrderUrl = $this->url(array('controller' => 'orders', 'action' => 'new'));
+
+
+$this->headTitle()->setSeparator(' | ');
+$this->headTitle('Maestro');
+echo $this->doctype();
+?>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <?php echo $this->headTitle() ?>
+    <?php echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/style.css');?>
+    <?php echo $this->headLink()->setStylesheet($this->baseUrl().'/css/font-awesome.css'); ?>
+    <?php echo $this->headLink()->setStylesheet($this->baseUrl().'/css/animate.css'); ?>
+	<?php echo $this->headLink()->setStylesheet("https://fonts.googleapis.com/css?family=Pavanam|Roboto+Slab:100,300,400,700&amp;subset=latin-ext"); ?>
+    <?php echo $this->headLink()->setStylesheet("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"); ?>
+    <?php echo $this->headScript()->setFile("https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"); ?>
+    <?php echo $this->headScript()->setFile("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"); ?>
+    <?php echo $this->headScript()->setFile($this->baseUrl().'/js/wow.js'); ?>
+    <script>new WOW().init();</script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/public"><img src="../../../logo/logo.png"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"> <a href="/public">Home<hr></a></li>
+                <li><a href="<?php echo $aboutUrl ?>">About<hr></a></li>
+                <li class="sub_menu_parent"><a href="<?php echo $servicesUrl ?>">Services<i class="fa fa-caret-down"></i><hr></a>
+                    <ul class="sub_menu">
+                        <a href="/public/index/services/type/1">Oil Change</a>
+                        <a href="/public/index/services/type/2">Electrical Services</a>
+                        <a href="/public/index/services/type/3">Brake disc &amp; Pads</a>
+                        <a href="/public/index/services/type/4">Filter Replacement</a>
+                        <a href="/public/index/services/type/5">Replacement Battery</a>
+                        <a href="/public/index/services/type/6">Engine Diagnostics</a>
+                        <p><a href="services.html">MORE</a></p>
+                    </ul>
+                </li>
+                <li><a href="<?php echo $contactsUrl ?>">Contacts<hr></a></li>
+                <?php if (Zend_Auth::getInstance()->hasIdentity()): ?>
+                <li><a href="<?php echo $accountUrl ?>">Account<hr></a></li>
+                <li><a href="<?php echo $logoutUrl ?>"><i class="fa fa-sign-out"></i><hr></a></li>
+                <?php else: ?>
+                <li><a href="<?php echo $loginUrl ?>">Login<hr></a></li>
+                <?php endif; ?>
+                <a class="btn" href="/public/index/order">Make order</a>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- Данная запись выводит содержимое view-->
+<?php echo $this->layout()->content; ?>
+<footer>
+    <div class="foter-image ">
+        <div class="footer-gorizond">
+            <div class="row">
+                <div class="col-md-4 col-lg-4">
+                    <div class="contacts">
+                        <h3><i class="fa fa-map-marker"></i>Ternopil city,46000:<br> Street 1 Lviv</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <div class="contacts">
+                        <h3><i class="fa fa-phone"></i>(+380) 985 574 767<br>(+380) 935 374 947</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <div class="contacts">
+                        <h3><i class="fa fa-envelope-o"></i>volyanskiy.2015@mail.ru</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="gorizond-line">
+            <div class="col-md-4 col-lg-4">
+                <h6>ABOUT US</h6>
+                <hr>
+                <p>We are one of the best services, we have
+                    the best professionals, we work at the
+                    highest level.Politely treat every client.</p>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <h6>Our Services</h6>
+                <hr>
+                <p><i class="fa fa-check"></i>Brake disc &amp; Pads</p>
+                <p><i class="fa fa-check"></i>Oil Change</p>
+                <p><i class="fa fa-check"></i>Electrical Services</p>
+                <p><i class="fa fa-check"></i>Replacement Battery</p>
+                <p><i class="fa fa-check"></i>Engine Diagnostics</p>
+                <p><i class="fa fa-check"></i>Filter Replacement</p>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="HOURS">
+                    <h6>HOURS </h6>
+                    <hr>
+                    <li>
+                        <span>Monday:</span> 8:00am-8:00pm
+                    </li>
+                    <li>
+                        <span>Tuesday:</span> 8:00am-8:00pm
+                    </li>
+                    <li>
+                        <span>Wednesday:</span> 8:00am-8:00pm
+                    </li>
+                    <li>
+                        <span>Thursday:</span> 8:00am-8:00pm
+                    </li>
+                    <li>
+                        <span>Friday:</span> 8:00am-8:00pm
+                    </li>
+                    <li>
+                        <span>Saturday:</span> 8:00am-8:00pm
+                    </li>
+                    <li>
+                        <span>Sunday:</span> holiday
+                    </li>
+                </div>
+            </div>
+    </div>
+    </section>
+    <div class="copyright text-center">
+        Copyright &copy; 2016. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>
+

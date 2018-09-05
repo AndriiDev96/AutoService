@@ -1,0 +1,39 @@
+<section class="about-page">
+	<div class="container">
+	<h1>About</h1>
+	<hr>
+	<div class="col-md-6">
+	<div class="slider-photo" style="max-width:500px">
+		<img class="mySlides" src="/about/about1.png" style="width:100%">
+		<img class="mySlides" src="/about/about2.png" style="width:100%">
+		<img class="mySlides" src="/about/about3.png" style="width:100%">
+		<img class="mySlides" src="/about/about4.png" style="width:100%">
+	</div>
+	</div>
+	<div class="col-md-6 about-text">
+		<p>Maestro is a young company, led by managers are highly skilled
+		with many years experience in auto-service maintenance, repair of motor vehicles and spare parts.</p>
+		<p>New technologies are used on the basis of service, modern equipment is used. We employ the
+		master of the highest level.</p> <p>Maestro provide vehicle repair "Turnkey". Auto provides all kinds
+		of services, from mounting and cleaning, finishing engine renovated, body and chassis.</p>
+		<p>The company applies a differentiated approach to charging service, depending on the vehicle class. This
+		allows us to service our service available for owners of budget cars as well as for owners of premium cars.</p>
+	</div>
+</section>
+<script>
+	var myIndex = 0;
+	carousel();
+
+	function carousel() {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		myIndex++;
+		if (myIndex > x.length) {myIndex = 1}
+		x[myIndex-1].style.display = "block";
+		setTimeout(carousel, 9000);
+	}
+
+</script>

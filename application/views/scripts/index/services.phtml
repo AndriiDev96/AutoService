@@ -1,0 +1,132 @@
+<section class="panel_service">
+	<div class="container">
+		<div class="left">
+		<?php if(isset($this->type)): ?>
+			<h3><?php echo $this->services[$this->type-1] ?></h3>
+		<?php else: ?>
+			<h3>Our Services</h3>
+		<?php endif; ?>
+		</div>
+		<?php if(isset($this->type)): ?>
+		<div class="right">
+			<label>return:<span><a href="/public/index/services">OUR SERVICES</a></span></label>
+		</div>
+		<?php endif; ?>
+	</div>
+</section>
+<section class="list_services">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-lg-3">
+				<ul class="vertikal_menu">
+					<?php for ($i = 0; $i < count($this->services); $i++): ?>
+						<?php if($i == $this->type-1): ?>
+						<li class="selected"><a href="/public/index/services/type/<?php echo $i-1 ?>"><?php echo $this->services[$i] ?><i class="fa fa-angle-right"></i></a></li>
+						<?php else: ?>
+						<li><a href="/public/index/services/type/<?php echo $i+1 ?>"><?php echo $this->services[$i] ?><i class="fa fa-angle-right"></i></a></li>
+						<?php endif; ?>
+					<?php endfor; ?>
+				</ul>
+			</div>
+			<?php if(!isset($this->type)): ?>
+			<div class="col-md-9 col-lg-9">
+				<div class="ser_photo">
+				</div>
+				<div class="ser_text">
+					<p>Our service center provides a wide range of maintenance, diagnosis and repair of automobiles.</p>
+					<p>Guaranteeing excellent quality of all parts used in the repair and consumables and a high level of diagnostic
+						and repair work, service centers qualified to help you resolve any technical issues related to your car. Constantly improving customer service and improving the technical level of our staff, we try to stick to low prices.</p>
+					<p>Our employees, only highly qualified professionals with years of experience. Becoming our client, you will see in the
+						speed and quality of work performed the employees of our service centers.</p>
+					<p>For regular customers a service station provides discounts on service and parts.
+						You will be pleasantly surprised pricing service centers, as we try for you!</p>
+					</h4>
+				</div>
+			</div>
+			<?php elseif($this->type == 1): ?>
+			<div class="col-md-3 col-lg-3">
+				<div class="oil_photo">
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3">
+				<div class="oil_photo2">
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3">
+				<div class="oil_photo3">
+				</div>
+			</div>
+				<div class="listing-service">
+				<div class="col-md-9">
+				<h1>More</h1>
+					<hr>
+					<div class="oli-text">
+						<p>During operation of the vehicle, over time,
+							it begins to thicken the oil even if you are the highest quality in its viscous properties.
+							This is because the operation of the engine, especially diesel and gasoline are slightly littered process
+							for thickening speed also affects the quality of the oil produced and age of your vehicle.</p>
+						<p>Whatever it was, the optimal interval between oil changes and filters is one year.</p>
+						<p>Our experts are happy to help you with this problem.</p>
+					</div>
+					</div>
+					</div>
+			<?php elseif($this->type == 2): ?>
+			<div class="col-md-3 col-lg-3">
+				<div class="elec_photo">
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3">
+				<div class="elec_photo2">
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3">
+				<div class="elec_photo3">
+				</div>
+			</div>
+				<div class="listing-service">
+					<div class="col-md-9">
+						<h1>More</h1>
+						<hr>
+						<div class="oli-text">
+							<p>Quality repairs we exclude the case of unqualified interventions in complex vehicle systems.
+								Warranty repair electricity can provide only by professionals.</p>
+							<p>The services we provide - from the elimination of various types of failures
+								of equipment to replace the battery and complicated wiring work to restore the entire vehicle.
+								Violation wiring can happen from a simple short circuit. We perform services for the diagnosis electricity.
+								Turning to our service, you can refine the diagnosis in each case of malfunction.
+								In any case of electricity failure, we will help to deal with complex problems in your car,
+								both in electrical and electronic-mechanical a part.</p>
+						</div>
+					</div>
+				</div>
+			<?php elseif($this->type == 3): ?>
+				<div class="col-md-3 col-lg-3">
+					<div class="disc_photo">
+					</div>
+				</div>
+				<div class="col-md-3 col-lg-3">
+					<div class="disc_photo2">
+					</div>
+				</div>
+				<div class="col-md-3 col-lg-3">
+					<div class="disc_photo3">
+					</div>
+				</div>
+				<div class="listing-service">
+					<div class="col-md-9">
+						<h1>More</h1>
+						<hr>
+						<div class="oli-text">
+							<p>The braking system is a mechanism designed to reduce speed and stop the vehicle.
+								Every car owner knows that to maintain the brake in good and serviceable condition
+								requires constant and continuous attention and serious attitude towards any manifestations
+								of brake failure, because this system is the key to safety and the occupants in the operation of the car.</p>
+							<p>So, if you suspect a faulty brake contact for help from qualified professionals of our service
+								centers and we are high quality and at a reasonable price settle your brake system malfunction.</p>
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</section>
