@@ -20,7 +20,7 @@ The following is a sample VHOST you might want to consider for your project.
    # This should be omitted in the production environment
    SetEnv APPLICATION_ENV development
 
-   <Directory "C:/wamp/www/autoservice/public">
+   <Directory "C:/wamp64/www/AutoService/public">
        Options Indexes MultiViews FollowSymLinks
        AllowOverride All
        Order allow,deny
